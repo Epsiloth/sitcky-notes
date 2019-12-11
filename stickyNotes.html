@@ -1,0 +1,35 @@
+<html>
+<head>
+	<style>
+		body{
+			margin:0;
+			background-image: url("chalkboard.jpg");
+			background-color:black;
+		}
+		button{
+			background:black;
+			color:white;
+			border:2px solid white;
+		}
+	</style>
+	<script src="stickyNotes.js"></script>
+</head>
+<body onmousemove="dragElement(event)">
+	<script>
+		window.onload = function(){
+			var body = document.body;
+			var addNote = document.createElement("button");
+			addNote.setAttribute("type", "button");
+			addNote.innerHTML = "Add Note";
+			body.appendChild(addNote);
+
+			var contenedor = document.createElement("div");
+			contenedor.setAttribute("id", "contenedor");
+			contenedor.setAttribute("height", "100%");
+			contenedor.setAttribute("width", "100%");
+			body.appendChild(contenedor);
+			addNote.onclick = function(){createNewNote(contenedor)};
+		}
+	</script>
+</body>
+</html>
